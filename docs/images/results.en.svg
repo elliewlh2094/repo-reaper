@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="360" viewBox="0 0 800 360" role="img" aria-labelledby="t d">
+<title id="t">Size after the cut, as a share of the size before</title>
+<desc id="d">A React web app, Tracked Markdown: 523 KB → 167 KB (−68%); A React web app, All tracked content: 18 MB → 6.4 MB (−64%); An agent skill plugin, Always-loaded rules (CLAUDE.md): 12.1 KB → 5.0 KB (−58%); An agent skill plugin, Plan documents: 452 KB → 8.9 KB (−98%)</desc>
+
+<style>
+  svg { --ink-1:#0b0b0b; --ink-2:#52514e; --muted:#898781; --track:#ef8f8e; --fill:#a51f23; --rule:#e1e0d9;
+        --good:#0ca30c; --warn:#fab219; --bad:#d03b3b; }
+  text { font-family: system-ui, -apple-system, 'Segoe UI', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif; }
+  .t1 { fill: var(--ink-1); }
+  .t2 { fill: var(--ink-2); }
+  .tm { fill: var(--muted); }
+  .track { fill: var(--track); }
+  .fill { fill: var(--fill); }
+  .rule { stroke: var(--rule); stroke-width: 1; }
+</style>
+<rect width="800" height="360" rx="10" fill="#ffffff"/>
+<g transform="translate(20,20)">
+
+<text x="0" y="22" class="t1" font-size="16" font-weight="600" >Size after the cut, as a share of the size before</text>
+<rect x="0" y="40" width="24" height="12" rx="3" class="track"/>
+<text x="32" y="51" class="t2" font-size="13" font-weight="400" >Before (100%)</text>
+<rect x="156" y="40" width="24" height="12" rx="3" class="fill"/>
+<text x="188.2" y="51" class="t2" font-size="13" font-weight="400" >After</text>
+<text x="0" y="86" class="t2" font-size="12" font-weight="400" >A React web app</text>
+<text x="0" y="105" class="t1" font-size="14" font-weight="500" >Tracked Markdown</text>
+<path class="track" d="M300,84 H596 Q600,84 600,88 V96 Q600,100 596,100 H300 Z"/>
+<path class="fill" d="M300,84 H392.0 Q396.0,84 396.0,88 V96 Q396.0,100 392.0,100 H300 Z"/>
+<text x="300" y="120" class="t2" font-size="12" font-weight="400" >523 KB → 167 KB</text>
+<text x="616" y="98" class="t1" font-size="18" font-weight="600" >−68%</text>
+<line x1="0" y1="130" x2="760" y2="130" class="rule"/>
+<text x="0" y="144" class="t2" font-size="12" font-weight="400" >A React web app</text>
+<text x="0" y="163" class="t1" font-size="14" font-weight="500" >All tracked content</text>
+<path class="track" d="M300,142 H596 Q600,142 600,146 V154 Q600,158 596,158 H300 Z"/>
+<path class="fill" d="M300,142 H402.8 Q406.8,142 406.8,146 V154 Q406.8,158 402.8,158 H300 Z"/>
+<text x="300" y="178" class="t2" font-size="12" font-weight="400" >18 MB → 6.4 MB</text>
+<text x="616" y="156" class="t1" font-size="18" font-weight="600" >−64%</text>
+<line x1="0" y1="188" x2="760" y2="188" class="rule"/>
+<text x="0" y="202" class="t2" font-size="12" font-weight="400" >An agent skill plugin</text>
+<text x="0" y="221" class="t1" font-size="14" font-weight="500" >Always-loaded rules (CLAUDE.md)</text>
+<path class="track" d="M300,200 H596 Q600,200 600,204 V212 Q600,216 596,216 H300 Z"/>
+<path class="fill" d="M300,200 H423.2 Q427.2,200 427.2,204 V212 Q427.2,216 423.2,216 H300 Z"/>
+<text x="300" y="236" class="t2" font-size="12" font-weight="400" >12.1 KB → 5.0 KB</text>
+<text x="616" y="214" class="t1" font-size="18" font-weight="600" >−58%</text>
+<line x1="0" y1="246" x2="760" y2="246" class="rule"/>
+<text x="0" y="260" class="t2" font-size="12" font-weight="400" >An agent skill plugin</text>
+<text x="0" y="279" class="t1" font-size="14" font-weight="500" >Plan documents</text>
+<path class="track" d="M300,258 H596 Q600,258 600,262 V270 Q600,274 596,274 H300 Z"/>
+<path class="fill" d="M300,258 H302.95500000000004 Q305.91,258 305.91,260.955 V271.045 Q305.91,274 302.95500000000004,274 H300 Z"/>
+<text x="300" y="294" class="t2" font-size="12" font-weight="400" >452 KB → 8.9 KB</text>
+<text x="616" y="272" class="t1" font-size="18" font-weight="600" >−98%</text>
+</g>
+</svg>

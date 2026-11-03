@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="378" viewBox="0 0 800 378" role="img" aria-labelledby="t d">
+<title id="t">5 drafted steps → 1 kept, 1 depends on your rules, 3 removed</title>
+<desc id="d">Kept: 1. Add --version to argparse. The request needs it; Removed: 2. Create a VersionProvider abstract class and a plugin system. One version source needs no abstraction; Removed: 3. Write docs/versioning-strategy.md. The request is a flag, not a policy; Depends: 4. Add a test for the --version output. Kept only if your rules require a test; Removed: 5. Add a compatibility layer for a legacy -V alias. Nothing shows that -V ever existed</desc>
+
+<style>
+  svg { --icon-on:#ffffff; }
+  svg { --ink-1:#0b0b0b; --ink-2:#52514e; --muted:#898781; --track:#ef8f8e; --fill:#a51f23; --rule:#e1e0d9;
+        --good:#0ca30c; --warn:#fab219; --bad:#d03b3b; }
+  text { font-family: system-ui, -apple-system, 'Segoe UI', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif; }
+  .t1 { fill: var(--ink-1); }
+  .t2 { fill: var(--ink-2); }
+  .tm { fill: var(--muted); }
+  .track { fill: var(--track); }
+  .fill { fill: var(--fill); }
+  .rule { stroke: var(--rule); stroke-width: 1; }
+</style>
+<rect width="800" height="378" rx="10" fill="#ffffff"/>
+<g transform="translate(20,20)">
+
+<text x="0" y="22" class="t1" font-size="16" font-weight="600" >5 drafted steps → 1 kept, 1 depends on your rules, 3 removed</text>
+<circle cx="8" cy="47" r="8" fill="var(--good)"/><path d="M4,47 l3,3 l5,-6" fill="none" stroke="var(--icon-on, #ffffff)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="22" y="52" class="t2" font-size="13" font-weight="400" >Kept</text>
+<circle cx="87.6" cy="47" r="8" fill="var(--warn)"/><path d="M87.6,43 v4.5" stroke="#0b0b0b" stroke-width="2" stroke-linecap="round"/><circle cx="87.6" cy="51" r="1.3" fill="#0b0b0b"/>
+<text x="101.6" y="52" class="t2" font-size="13" font-weight="400" >Depends</text>
+<path d="M184.4,42 l10,10 M194.4,42 l-10,10" stroke="var(--bad)" stroke-width="2.4" stroke-linecap="round"/>
+<text x="203.4" y="52" class="t2" font-size="13" font-weight="400" >Removed</text>
+<circle cx="8" cy="85" r="8" fill="var(--good)"/><path d="M4,85 l3,3 l5,-6" fill="none" stroke="var(--icon-on, #ffffff)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="26" y="90" class="t1" font-size="14" font-weight="600" >1. Add --version to argparse</text>
+<text x="26" y="109" class="t2" font-size="12" font-weight="400" >Kept: The request needs it</text>
+<line x1="0" y1="122" x2="760" y2="122" class="rule"/>
+<path d="M3,132 l10,10 M13,132 l-10,10" stroke="var(--bad)" stroke-width="2.4" stroke-linecap="round"/>
+<text x="26" y="142" class="tm" font-size="14" font-weight="400" text-decoration="line-through">2. Create a VersionProvider abstract class and a plugin system</text>
+<text x="26" y="161" class="t2" font-size="12" font-weight="400" >Removed: One version source needs no abstraction</text>
+<line x1="0" y1="174" x2="760" y2="174" class="rule"/>
+<path d="M3,184 l10,10 M13,184 l-10,10" stroke="var(--bad)" stroke-width="2.4" stroke-linecap="round"/>
+<text x="26" y="194" class="tm" font-size="14" font-weight="400" text-decoration="line-through">3. Write docs/versioning-strategy.md</text>
+<text x="26" y="213" class="t2" font-size="12" font-weight="400" >Removed: The request is a flag, not a policy</text>
+<line x1="0" y1="226" x2="760" y2="226" class="rule"/>
+<circle cx="8" cy="241" r="8" fill="var(--warn)"/><path d="M8,237 v4.5" stroke="#0b0b0b" stroke-width="2" stroke-linecap="round"/><circle cx="8" cy="245" r="1.3" fill="#0b0b0b"/>
+<text x="26" y="246" class="t1" font-size="14" font-weight="500" >4. Add a test for the --version output</text>
+<text x="26" y="265" class="t2" font-size="12" font-weight="400" >Depends: Kept only if your rules require a test</text>
+<line x1="0" y1="278" x2="760" y2="278" class="rule"/>
+<path d="M3,288 l10,10 M13,288 l-10,10" stroke="var(--bad)" stroke-width="2.4" stroke-linecap="round"/>
+<text x="26" y="298" class="tm" font-size="14" font-weight="400" text-decoration="line-through">5. Add a compatibility layer for a legacy -V alias</text>
+<text x="26" y="317" class="t2" font-size="12" font-weight="400" >Removed: Nothing shows that -V ever existed</text>
+</g>
+</svg>

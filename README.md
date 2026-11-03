@@ -1,13 +1,29 @@
-# Repo Reaper
-Cut the bloat. Spare the value.
+# 💀 Repo Reaper 🔪
+> Cut the bloat. Spare the value.
 
 English | [繁體中文](README.zh-TW.md)
 
-An agent skill for Claude Code and Codex. It questions whether each document, rule, plan, skill, or file in a repository needs to exist, and keeps only what serves the project's core goal. It follows the five-step algorithm: question the requirement, delete, simplify, speed up, automate.
+Repo Reaper is an agent skill for Claude Code and Codex. It questions whether each document, rule, plan, skill, or file in a repository needs to exist, and keeps only what serves the project's core goal.
+
+The skill is based on Elon Musk's 5-Step Algorithm:
+
+1. Make requirements less dumb.
+
+2. Delete parts or process.
+
+    > A rule of thumb: if you do not end up having to put back at least 10% of what you cut, you haven't deleted enough.
+
+3. Simplify or Optimize.
+
+4. Accelerate cycle times.
+
+5. Automate.
 
 ## What changes
 
-Results from trials on two past projects. Every deletion was approved row by row, and nothing was lost that Git cannot restore.
+The table below shows the results of trials on two projects.
+
+![Size after the cut as a share of the size before: tracked Markdown −68%, all tracked content −64%, always-loaded rules −58%, plan documents −98%](docs/images/results.en.svg)
 
 | Project | What was measured | Before | After |
 | --- | --- | --- | --- |
@@ -16,13 +32,15 @@ Results from trials on two past projects. Every deletion was approved row by row
 | An agent skill plugin | Always-loaded rules (`CLAUDE.md`) | 12.1 KB | 5.0 KB (−58%) |
 | | Plan documents | 16 files, 452 KB | 1 file, 8.9 KB (−98%) |
 
-After the cut, the web app's type check, 490 unit tests, and build passed, and the plugin passed its validation.
+**What gets deleted:** plans and to-do lists of finished releases, old audit reports that a script can regenerate, rules that no one could say who asked for, and architecture lists that repeat what each file already says.
 
-**What went:** plans and to-do lists of finished releases, old audit reports that a script can regenerate, rules that no one could say who asked for, and architecture lists that repeat what each file already says.
+**What can stay:** rules with a named owner or a real incident behind them, the current release's plan, the specification, and the decision records.
 
-**What stayed:** rules with a named owner or a real incident behind them, the current release's plan, the specification, and the decision records.
+## Plan review example
 
-**Plan review in one example.** The request was "Add a `--version` flag to this CLI."
+Suppose the request is: "Add a `--version` flag to this CLI."
+
+![A drafted plan of 5 steps after review: 1 kept, 1 depends on your rules, 3 removed](docs/images/plan-review.en.svg)
 
 | Drafted plan | After review |
 | --- | --- |
@@ -46,8 +64,9 @@ Call the skill by name (`/repo-reaper:repo-reaper` in Claude Code, `$repo-reaper
 
 ### Before you start
 
-- Commit your work first. Reap deletes only files that are tracked, committed, and unmodified. It leaves uncommitted changes, untracked files, and ignored files alone.
+- **Commit your work first!** Reap deletes only files that are tracked, committed, and unmodified. It leaves uncommitted changes, untracked files, and ignored files alone.
 - Work on a branch, so that you can review the whole result as one diff.
+- This skill does not simplify or optimize your code. Use it together with a skill made for that.
 
 ### Reap
 
@@ -91,6 +110,27 @@ codex plugin add repo-reaper@repo-reaper
 ```
 
 Start a new session after installation.
+
+### Update
+
+An installed plugin does not update itself when a new version is released. Update the marketplace first, then the plugin, and then start a new session.
+
+Claude Code:
+
+```bash
+claude plugin marketplace update repo-reaper
+claude plugin update repo-reaper@repo-reaper
+claude plugin list   # repo-reaper@repo-reaper shows the new version
+```
+
+Codex:
+
+```bash
+codex plugin marketplace upgrade repo-reaper
+codex plugin add repo-reaper@repo-reaper
+```
+
+If you installed from a local path, update that folder first (for example with `git pull`). Claude Code reads the plugin from the folder, so the change takes effect at the next session. Codex does not support `marketplace upgrade` for a local path, so run only `codex plugin add repo-reaper@repo-reaper`.
 
 ## License
 

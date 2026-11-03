@@ -1,13 +1,29 @@
-# Repo Reaper
-Cut the bloat. Spare the value.
+# 💀 Repo Reaper 🔪
+> 刪簡冗餘，留存價值。
 
 [English](README.md) | 繁體中文
 
-Repo Reaper 是供 Claude Code 與 Codex 使用的 agent skill。它逐項質疑儲存庫中的文件、規則、計畫、skill 與檔案是否需要存在，只保留為專案核心目標服務的項目。它依循五步驟演算法：質疑需求、刪除、簡化、加速、自動化。
+Repo Reaper 是供 Claude Code 與 Codex 使用的 agent skill。它將逐項質疑儲存庫中的文件、規則、計畫、skill 與檔案是否需要存在，只保留為專案核心目標服務的項目。
+
+Skill 參考 Elon Musk 的五步驟演算法（5-Step Algorithm）設計：
+
+1. 讓需求不要太愚蠢（Make requirements less dumb.）
+
+2. 刪除多餘的流程或零件（Delete parts or process.）
+
+    > 一個簡單的經驗法則：如果你最終沒有重新加回至少 10% 的刪除量，那就表示你刪得還不夠。
+
+3. 簡化與優化（Simplify or Optimize.）
+
+4. 加速工作流程（Accelerate cycle times.）
+
+5. 自動化（Automate.）
 
 ## 使用效果
 
-下表是在兩個過去專案上試用的結果。每一項刪除都經過逐列核准，沒有任何無法用 Git 復原的損失。
+下表是在兩個專案上試用的結果。
+
+![瘦身後的大小佔瘦身前的比例：受追蹤的 Markdown −68%、全部受追蹤內容 −64%、常駐規則 −58%、計畫文件 −98%](docs/images/results.zh-TW.svg)
 
 | 專案 | 量測項目 | 瘦身前 | 瘦身後 |
 | --- | --- | --- | --- |
@@ -16,13 +32,15 @@ Repo Reaper 是供 Claude Code 與 Codex 使用的 agent skill。它逐項質疑
 | 一個 agent skill plugin | 常駐規則（`CLAUDE.md`） | 12.1 KB | 5.0 KB（−58%） |
 | | 計畫文件 | 16 份，452 KB | 1 份，8.9 KB（−98%） |
 
-瘦身後，網頁應用的型別檢查、490 個單元測試與建置都通過，plugin 也通過驗證。
+**會被刪除的項目：** 已發布版本的計畫與待辦清單、可用腳本重新產生的舊稽核報告、沒有人說得出是誰要求的規則，以及重述各檔案用途的架構清單。
 
-**被刪除的項目：** 已發布版本的計畫與待辦清單、可用腳本重新產生的舊稽核報告、沒有人說得出是誰要求的規則，以及重述各檔案用途的架構清單。
+**能被保留的項目：** 有具名提出者或真實事故支持的規則、目前版本的計畫、規格與決策紀錄。
 
-**被保留的項目：** 有具名提出者或真實事故支持的規則、目前版本的計畫、規格與決策紀錄。
+## 規劃審視的例子
 
-**規劃審視的例子。** 使用者的要求是「幫這個 CLI 加一個 `--version` 參數」。
+假設使用者的要求是：「幫這個 CLI 加一個 `--version` 參數」。
+
+![代理草擬的 5 個步驟經過審視後：保留 1 步、1 步視你的規則而定、移除 3 步](docs/images/plan-review.zh-TW.svg)
 
 | 代理草擬的計畫 | 審視後 |
 | --- | --- |
@@ -46,8 +64,9 @@ Repo Reaper 是供 Claude Code 與 Codex 使用的 agent skill。它逐項質疑
 
 ### 開始之前
 
-- 先提交你的工作。Reap 只刪除受追蹤、已提交且未修改的檔案，不會動到未提交的變更、未追蹤的檔案與被忽略的檔案。
+- **先提交你的工作！** Reap 只刪除受追蹤、已提交且未修改的檔案，不會動到未提交的變更、未追蹤的檔案與被忽略的檔案。
 - 在分支上進行，這樣你可以用一份 diff 檢查全部結果。
+- 這個 skill 不會幫你做程式碼的簡化和最佳化，可以搭配相關 skill 一起使用。
 
 ### Reap（瘦身）
 
@@ -91,6 +110,27 @@ codex plugin add repo-reaper@repo-reaper
 ```
 
 安裝後請開啟新的工作階段。
+
+### 更新
+
+有新版本時，已安裝的 plugin 不會自動更新。請先更新 marketplace，再更新 plugin，最後開啟新的工作階段。
+
+Claude Code：
+
+```bash
+claude plugin marketplace update repo-reaper
+claude plugin update repo-reaper@repo-reaper
+claude plugin list   # repo-reaper@repo-reaper 應顯示新的版本號
+```
+
+Codex：
+
+```bash
+codex plugin marketplace upgrade repo-reaper
+codex plugin add repo-reaper@repo-reaper
+```
+
+如果你是用本機路徑安裝，請先更新該資料夾，例如執行 `git pull`。Claude Code 直接從該資料夾讀取 plugin，所以變更會在下一個工作階段生效。Codex 的 `marketplace upgrade` 不支援本機路徑，所以只需要執行 `codex plugin add repo-reaper@repo-reaper`。
 
 ## 授權
 
