@@ -1,0 +1,22 @@
+{
+  "name": "repo-reaper",
+  "interface": {
+    "displayName": "Repo Reaper"
+  },
+  "plugins": [
+    {
+      "name": "repo-reaper",
+      "version": "0.1.0",
+      "description": "Cut repository bloat by questioning whether each item needs to exist, and review drafted plans for over-engineering.",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

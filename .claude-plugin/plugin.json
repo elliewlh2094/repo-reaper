@@ -1,0 +1,12 @@
+{
+  "name": "repo-reaper",
+  "version": "0.1.0",
+  "description": "Cut repository bloat by questioning whether each document, rule, plan, skill, or file needs to exist. Reviews drafted plans for over-engineering and checks slimmed projects for regrowth.",
+  "author": {
+    "name": "Ellie Huang"
+  },
+  "homepage": "https://github.com/elliewlh2094/repo-reaper",
+  "repository": "https://github.com/elliewlh2094/repo-reaper",
+  "license": "MIT",
+  "skills": "./skills"
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "repo-reaper",
+  "description": "Cut repository bloat for AI coding agents.",
+  "owner": {
+    "name": "Ellie Huang"
+  },
+  "plugins": [
+    {
+      "name": "repo-reaper",
+      "version": "0.1.0",
+      "source": "./",
+      "description": "Cut repository bloat by questioning whether each item needs to exist, and review drafted plans for over-engineering.",
+      "license": "MIT",
+      "keywords": ["skills", "cleanup", "documentation", "planning"]
+    }
+  ]
+}
