@@ -1,7 +1,9 @@
 # 💀 Repo Reaper 🔪
 > Cut the bloat. Spare the value.
 
-English | [繁體中文](README.zh-TW.md)
+English | [中文](README.zh-TW.md)
+
+![](docs/images/title.png)
 
 Repo Reaper is an agent skill for Claude Code and Codex. It questions whether each document, rule, plan, skill, or file in a repository needs to exist, and keeps only what serves the project's core goal.
 

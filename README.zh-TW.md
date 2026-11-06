@@ -1,7 +1,9 @@
 # 💀 Repo Reaper 🔪
 > 刪簡冗餘，留存價值。
 
-[English](README.md) | 繁體中文
+[English](README.md) | 中文
+
+![](docs/images/title.png)
 
 Repo Reaper 是供 Claude Code 與 Codex 使用的 agent skill。它將逐項質疑儲存庫中的文件、規則、計畫、skill 與檔案是否需要存在，只保留為專案核心目標服務的項目。
 
@@ -13,7 +15,7 @@ Skill 參考 Elon Musk 的五步驟演算法（5-Step Algorithm）設計：
 
     > 一個簡單的經驗法則：如果你最終沒有重新加回至少 10% 的刪除量，那就表示你刪得還不夠。
 
-3. 簡化與優化（Simplify or Optimize.）
+3. 簡化與最佳化（Simplify or Optimize.）
 
 4. 加速工作流程（Accelerate cycle times.）
 
